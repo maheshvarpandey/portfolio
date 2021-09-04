@@ -1,7 +1,14 @@
-import { render } from "react-dom";
+import React, { useState, useEffect } from "react";
+import { HomeFilled, FacebookFilled, TwitterCircleFilled, InstagramFilled, InfoCircleFilled, PhoneFilled, MailFilled, CopyFilled, EditFilled, FileTextFilled, CustomerServiceFilled, FilePdfFilled } from '@ant-design/icons';
+import myImage from './assets/maheshvar.png'
 import Slider from "react-animated-slider";
+import About from './components/About';
+import Certification from './components/Certification';
+import Education from './components/Education';
+import Intrest from './components/Intrest';
+import Resume from './components/Resume';
+import Project from './components/Project';
 import "react-animated-slider/build/horizontal.css";
-// import "normalize.css/normalize.css";
 import "./SliderStyle/slider-animations.css";
 import "./SliderStyle/styles.css";
 import './App.css';
@@ -15,7 +22,7 @@ const content = [
     button: "Read More",
     image: "https://i.imgur.com/ZXBtVw7.jpg",
     user: "Luan Gjokaj",
-    userProfile: "https://i.imgur.com/JSW6mEk.png"
+    userProfile: {myImage}
   },
   {
     title: "Tortor Dapibus Commodo Aenean Quam",
@@ -24,7 +31,7 @@ const content = [
     button: "Discover",
     image: "https://i.imgur.com/DCdBXcq.jpg",
     user: "Erich Behrens",
-    userProfile: "https://i.imgur.com/0Clfnu7.png"
+    userProfile: {myImage}
   },
   {
     title: "Phasellus volutpat metus",
@@ -33,48 +40,16 @@ const content = [
     button: "Buy now",
     image: "https://i.imgur.com/DvmN8Hx.jpg",
     user: "Bruno Vizovskyy",
-    userProfile: "https://i.imgur.com/4KeKvtH.png"
+    userProfile: {myImage}
   }
 ];
 
+
+
 function App() {
-  const allElements = document.querySelectorAll('*:not([theme-button]):not([class*="gray"])');
-const themeButtons = document.querySelectorAll('[theme-button]');
-const escapeRegExp = (string) =>  string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-const replaceAll = (str, term, replacement) => str.replace(new RegExp(escapeRegExp(term), 'g'), replacement);
-let currTheme = 'indigo';
 
-const changeTheme = (theme) => {
-  allElements.forEach((element) => {
-    console.log("jj");
-    if (element.getAttribute('class') !== null) {
-      const newClasses = replaceAll(element.getAttribute('class'), currTheme, theme);
-      element.setAttribute('class', newClasses);
-    }
-  });
-  currTheme = theme;
-}
-
-themeButtons.forEach((button) => {
-   button.addEventListener('click', (e) => {
-  changeTheme(e.target.getAttribute('theme-button'));
-  });
-});
-
-  return (
-    <div className="">
-     <div>
-      <div className="h-screen w-screen bg-indigo-400 overflow-hidden absolute flex items-center">
-          <div className="w-screen h-64 absolute top-0 opacity-50 left-0 -my-40 -mx-64 bg-indigo-300 rounded-full" />
-            <div className="w-64 h-64 -mx-32 bg-indigo-300 opacity-50 rounded-full" />
-            <div className="w-64 h-64 ml-auto relative opacity-50 -mr-32 bg-indigo-300 rounded-full" />
-            <div className="w-screen h-64 absolute opacity-50 bottom-0 right-0 -my-40 -mx-64 bg-indigo-300 rounded-full" />
-        </div>
-      <div className="container mx-auto h-screen pt-20 px-8 relative">
-        <div className="flex w-full rounded-lg lg:overflow-hidden overflow-auto lg:flex-row flex-col shadow-2xl">
-          <div className="text-center font-extrabold text-3xl justify-center items-center w-full"> 
-          
-          <Slider className="slider-wrapper">
+  const [activeTab, setActiveTab] = useState('home');
+  const Home =()=> <Slider className="slider-wrapper">
               {content.map((item, index) => (
                 <div
                   key={index}
@@ -87,29 +62,115 @@ themeButtons.forEach((button) => {
                     <button className="buttonSlider">{item.button}</button>
                   </div>
                   <section className="text-center justify-center">
-                    <img className="text-center" src={item.userProfile} alt={item.user} />
+                    <img className="text-center h-20 w-20" src={myImage} alt="Maheshvar" />
                     <span className="text-center">
-                      Posted by <strong>{item.user}</strong>
+                      Posted by <strong>Maheshvar</strong>
                     </span>
                   </section>
                 </div>
               ))}
             </Slider>
+
+  const renderData =()=>{
+    switch(activeTab){
+      case 'Home':
+        return <Home />;
+      case 'About':
+        return <About />;
+      case 'Resume':
+        return <Resume />;
+      case 'Education':
+        return <Education />;
+      case 'Certifications':
+        return <Certification />;
+      case 'Projects':
+        return <Project />;
+      case 'Intrest':
+        return <Intrest />;
+      default:
+        return <Home />;
+    }
+  }
+
+  useEffect(()=>{
+    renderData();
+  }, [activeTab])
+
+//   const allElements = document.querySelectorAll('*:not([theme-button]):not([class*="gray"])');
+// const themeButtons = document.querySelectorAll('[theme-button]');
+// const escapeRegExp = (string) =>  string?.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+// const replaceAll = (str, term, replacement) => str.replace(new RegExp(escapeRegExp(term), 'g'), replacement);
+// let currTheme = 'indigo';
+
+// const changeTheme = (theme) => {
+//   allElements.forEach((element) => {
+//     console.log("jj");
+//     if (element.getAttribute('class') !== null) {
+//       const newClasses = replaceAll(element.getAttribute('class'), currTheme, theme);
+//       element.setAttribute('class', newClasses);
+//     }
+//   });
+//   currTheme = theme;
+// }
+
+// themeButtons.forEach((button) => {
+//    button.addEventListener('click', (e) => {
+//   changeTheme(e.target.getAttribute('theme-button'));
+//   });
+// });
+
+  return (
+    <div className="">
+     <div>
+      
+      <div className="h-screen w-screen bg-indigo-400 overflow-hidden absolute flex items-center">
+          <div className="w-screen h-64 absolute top-0 opacity-50 left-0 -my-40 -mx-64 bg-indigo-300 rounded-full" />
+            <div className="w-64 h-64 -mx-32 bg-indigo-300 opacity-50 rounded-full" />
+            <div className="w-64 h-64 ml-auto relative opacity-50 -mr-32 bg-indigo-300 rounded-full" />
+            <div className="w-screen h-64 absolute opacity-50 bottom-0 right-0 -my-40 -mx-64 bg-indigo-300 rounded-full" />
+        </div>
+      <div className="container mx-auto h-screen pt-20 px-8 relative">
+        <div className="flex w-full rounded-lg lg:overflow-hidden overflow-auto lg:flex-col flex-col shadow-2xl">
+           <div className="flex">
+              <div className="flex-1 bg-green-200 px-2 py-1"><PhoneFilled className="-mt-2" style={{color:"green"}} /> <span className="pl-2 font-bold">+91-9559014486</span></div>
+             
+             <div className="flex-1">
+               <div className="font-bold text-lg text-center bg-yellow-300">
+                 {activeTab}
+                 {/* <div className="flex-1">
+                    <button className="bg-blue-200 h-8 w-full transition-all outline-none focus:outline-none" theme-button="gray" onClick={()=>setActiveTab('home')} title="Home"> 
+                      <FacebookFilled /> 
+                    </button>
+                 </div>
+                 <div className="flex-1">
+                    <button className="bg-blue-400 h-8 w-full transition-all outline-none focus:outline-none" theme-button="gray" onClick={()=>setActiveTab('home')} title="Home"> 
+                      <TwitterCircleFilled /> 
+                    </button>
+                 </div>
+                 <div className="flex-1">
+                    <button className="bg-red-200 h-8 w-full transition-all outline-none focus:outline-none" theme-button="gray" onClick={()=>setActiveTab('home')} title="Home"> 
+                      <InstagramFilled /> 
+                    </button>
+                 </div> */}
+               </div>
+              </div> 
+              <div className="flex-1 bg-blue-200 px-2 py-1"><MailFilled className="-mt-2" style={{color:"blue"}} />  <span className="pl-2 font-bold">mkp10697@gmail.com</span></div>
+            </div>
+          <div className="text-center font-extrabold text-3xl justify-center items-center w-full"> 
+            {renderData()}
           </div> 
         </div>
       
       </div>
       <div className="fixed h-screen right-0 top-0 items-center flex">
-        <div className="p-2 bg-none border-l-0 border-t-4 border-b-4 border-indigo-400 inline-flex items-center rounded-tl-lg shadow-2xl rounded-bl-lg  flex-col">
-          <button className="bg-gray-500 sideWidth h-8 transition-all rounded-full mb-2 outline-none focus:outline-none" theme-button="gray" />
-          <button className="bg-red-500 sideWidth h-8 transition-all rounded-full mb-2 outline-none focus:outline-none" theme-button="red" />
-          {/* <button className="bg-orange-500 sideWidth h-8 transition-all rounded-full mb-2 outline-none focus:outline-none" theme-button="orange" /> */}
-          <button className="bg-green-500 sideWidth h-8 transition-all rounded-full mb-2 outline-none focus:outline-none" theme-button="green" />
-          {/* <button className="bg-teal-500 sideWidth h-8 transition-all rounded-full mb-2 outline-none focus:outline-none" theme-button="teal" /> */}
-          <button className="bg-blue-500 sideWidth h-8 transition-all rounded-full mb-2 outline-none focus:outline-none" theme-button="blue" />
-          <button className="bg-indigo-500 sideWidth h-8 transition-all rounded-full mb-2 outline-none focus:outline-none" theme-button="indigo" />
-          <button className="bg-purple-500 sideWidth h-8 transition-all rounded-full mb-2 outline-none focus:outline-none" theme-button="purple" />
-          <button className="bg-pink-500 sideWidth h-8 transition-all rounded-full outline-none focus:outline-none" theme-button="pink" />
+        <div className="py-2 px-1 bg-none border-l-0 border-t-4 border-b-4 border-indigo-400 inline-flex items-center rounded-tl-lg shadow-2xl rounded-bl-lg  flex-col">
+          <button className="bg-gray-500 sideWidth h-8 w-6 transition-all rounded-full mb-2 outline-none focus:outline-none" theme-button="gray" onClick={()=>setActiveTab('Home')} title="Home"> <HomeFilled /> </button>
+          <button className="bg-red-500 sideWidth h-8 w-6 transition-all rounded-full mb-2 outline-none focus:outline-none" theme-button="red" onClick={()=>setActiveTab('About')} title="About"> <InfoCircleFilled /> </button>
+          <button className="bg-pink-500 sideWidth h-8 w-6 transition-all rounded-full mb-2 outline-none focus:outline-none" theme-button="pink" onClick={()=>setActiveTab('Resume')}  title="Resume"> <FilePdfFilled /> </button>
+          <button className="bg-purple-500 sideWidth h-8 w-6 transition-all rounded-full mb-2 outline-none focus:outline-none" theme-button="purple" onClick={()=>setActiveTab('Education')}  title="Education"> <EditFilled /> </button>
+          <button className="bg-green-500 sideWidth h-8 w-6 transition-all rounded-full mb-2 outline-none focus:outline-none" theme-button="green" onClick={()=>setActiveTab('Certifications')} title="Certification"> <FileTextFilled /> </button>
+          <button className="bg-indigo-500 sideWidth h-8 w-6 transition-all rounded-full mb-2 outline-none focus:outline-none" theme-button="indigo" onClick={()=>setActiveTab('Projects')} title="Projects" > <CopyFilled /> </button>
+          <button className="bg-blue-500 sideWidth h-8 w-6 transition-all rounded-full mb-2 outline-none focus:outline-none" theme-button="blue"  onClick={()=>setActiveTab('Intrest')} title="Intrest"> <CustomerServiceFilled /> </button>
         </div>
       </div>
     </div>
