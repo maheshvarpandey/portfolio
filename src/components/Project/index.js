@@ -1,226 +1,235 @@
-import React from 'react';
-import { Affix } from 'antd';
+import React from "react";
+import fsdImage from "../../assets/fsdImage.png";
+import calImage from "../../assets/calendar.png";
+import dazImage from "../../assets/dazzleroad.png";
+import oifendImage from "../../assets/oifend.png";
+import { Tag } from "antd";
+
+const projectList = [
+  {
+    title: "FSD ( Fidelis Sustainability Development )",
+    head: "Medical equipment supplier",
+    description:
+      "I worked as a front-end developer in this project, The technology I used in this project -",
+    button: "Read More",
+    image: fsdImage,
+    user: "Maheshvar Pandey",
+    githubUrl: "https://www.fidelissd.com/our-team",
+    technology: [
+      {
+        id: 1,
+        name: "HTML",
+      },
+      {
+        id: 2,
+        name: "CSS",
+      },
+      {
+        id: 3,
+        name: "JavaScript",
+      },
+      {
+        id: 4,
+        name: "Ofbiz",
+      },
+      {
+        id: 5,
+        name: "FTL",
+      },
+    ],
+  },
+  {
+    title: "Holiday Calendar",
+    head: "Government Holiday Calenday in india",
+    githubUrl: "https://holiday-calander.herokuapp.com/",
+    description:
+      "It was my first react js web application, The technology I used in this project -",
+    button: "Read More",
+    image: calImage,
+    user: "Maheshvar Pandey",
+    technology: [
+      {
+        id: 1,
+        name: "HTML",
+      },
+      {
+        id: 2,
+        name: "CSS",
+      },
+      {
+        id: 3,
+        name: "JavaScript",
+      },
+      {
+        id: 4,
+        name: "React JS",
+      },
+      {
+        id: 5,
+        name: "Axios",
+      },
+    ],
+  },
+  {
+    title: "DazzleRoad",
+    head: "Ecommerce website to sell online jewellery",
+    githubUrl: "",
+    description:
+      "I worked as a front-end developer in this project, The technology I used in this project -",
+    button: "Read More",
+    image: dazImage,
+    user: "Maheshvar Pandey",
+    technology: [
+      {
+        id: 1,
+        name: "HTML",
+      },
+      {
+        id: 2,
+        name: "CSS",
+      },
+      {
+        id: 3,
+        name: "JavaScript",
+      },
+      {
+        id: 4,
+        name: "Ofbiz",
+      },
+      {
+        id: 5,
+        name: "FTL",
+      },
+    ],
+  },
+  {
+    title: "OIFend",
+    githubUrl: "https://oifend.com",
+    head: "Marketting web application",
+    description:
+      "I made this project as `Mern Stack Developer`, The technology I used in this project -",
+    button: "Read More",
+    image: oifendImage,
+    user: "Maheshvar Pandey",
+    technology: [
+      {
+        id: 1,
+        name: "HTML",
+      },
+      {
+        id: 2,
+        name: "CSS",
+      },
+      {
+        id: 3,
+        name: "JavaScript",
+      },
+      {
+        id: 4,
+        name: "React Js",
+      },
+      {
+        id: 5,
+        name: "Tailwind CSS",
+      },
+      {
+        id: 6,
+        name: "Node JS",
+      },
+      {
+        id: 7,
+        name: "Mongo DB",
+      },
+      {
+        id: 8,
+        name: "Rest API",
+      },
+      {
+        id: 9,
+        name: "Ant Design",
+      },
+    ],
+  },
+];
 
 function Project() {
-    return (
-        <div>
-           <div className="mx-auto p-4  overflow-y-auto screenHeight">
-            {/* recipe card grid*/}
-            <div className="grid gap-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 mb-16">
-                {/* card */}
-                <div className="bg-white rounded-md overflow-hidden relative shadow-md">
-                <div>
-                    <img className="w-full" src="https://lorempixel.com/640/360/food/" alt="Recipe Title" />
-                </div>
-                <div className="p-4">
-                    <h2 className="text-2xl text-green-400">Recipe Title</h2>
-                    <div className="flex justify-between mt-4 mb-4 text-gray-500">
-                    <div className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span className="ml-1 lg:text-xl">30m</span>
+  return (
+    <div>
+      <div className="mx-auto p-4  overflow-y-auto screenHeight">
+        <div className="">
+          {/* dark theme */}
+          {projectList.map((data) => (
+            <div className="w-full mx-auto z-10">
+              <div className="flex flex-col">
+                <div className="bg-gray-900 border border-gray-900 shadow-lg  rounded-3xl p-4 m-4">
+                  <div className="flex-none sm:flex">
+                    <div className=" relative h-32 w-32   sm:mb-0 mb-3">
+                      <img
+                        src={data.image}
+                        alt="FSD ( Fidelis Sustainability Development )"
+                        className="border-2 border-gray-500 w-32 h-32 object-cover rounded-2xl"
+                      />
                     </div>
-                    <div className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
-                        <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
-                        </svg>
-                        <span className="ml-1 lg:text-xl">10</span>
+                    <div className="flex-auto sm:ml-5 justify-evenly">
+                      <div className="flex items-left justify-between sm:mt-2">
+                        <div className="flex items-left">
+                          <div className="flex flex-col">
+                            <div className="w-full flex-none text-lg text-gray-200 font-bold text-left leading-none">
+                              {data.title}
+                            </div>
+                            <div className="flex-auto text-left text-gray-400 my-1">
+                              <span className="mr-3 ">{data.head}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex pt-2  text-sm text-gray-400">
+                        <div className="text-left">
+                          <p>{data.description}</p>
+                          <div className="flex flex-wrap text-left mb-2">
+                            {data.technology.map((tech) => (
+                              <div className="">
+                                <Tag color="green">{tech.name}</Tag>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                      {data.githubUrl && (
+                        <button className="flex-no-shrink float-right bg-green-400 hover:bg-green-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-300 hover:border-green-500 text-white rounded-full transition ease-in duration-300">
+                          <a
+                            href={data.githubUrl}
+                            target="_blank"
+                            style={{ color: "white" }}
+                          >
+                            See more..{" "}
+                          </a>
+                        </button>
+                      )}
                     </div>
-                    <div className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                        </svg>
-                        <span className="ml-1 lg:text-xl">1-2</span>
-                    </div>
-                    </div>
-                    <p className="mb-4 text-gray-500">A recipe that's quick and easy to make and super tasty!</p>
-                    <button className="text-white bg-green-400 p-4 rounded-md w-full uppercase">View Recipe</button>
+                  </div>
                 </div>
-                <div className="absolute top-0 right-0 mt-4 mr-4 bg-green-400 text-white rounded-full pt-1 pb-1 pl-4 pr-5 text-xs uppercase">
-                    <span>Medium</span>
-                </div>
-                </div>
-                {/* card */}
-                <div className="bg-white rounded-md overflow-hidden relative shadow-md">
-                <div>
-                    <img className="w-full" src="https://lorempixel.com/640/360/food/" alt="Recipe Title" />
-                </div>
-                <div className="p-4">
-                    <h2 className="text-2xl text-green-400">Recipe Title</h2>
-                    <div className="flex justify-between mt-4 mb-4 text-gray-500">
-                    <div className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span className="ml-1 lg:text-xl">30m</span>
-                    </div>
-                    <div className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
-                        <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
-                        </svg>
-                        <span className="ml-1 lg:text-xl">10</span>
-                    </div>
-                    <div className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                        </svg>
-                        <span className="ml-1 lg:text-xl">1-2</span>
-                    </div>
-                    </div>
-                    <p className="mb-4 text-gray-500">A recipe that's quick and easy to make and super tasty!</p>
-                    <button className="text-white bg-green-400 p-4 rounded-md w-full uppercase">View Recipe</button>
-                </div>
-                <div className="absolute top-0 right-0 mt-4 mr-4 bg-green-400 text-white rounded-full pt-1 pb-1 pl-4 pr-5 text-xs uppercase">
-                    <span>Medium</span>
-                </div>
-                </div>
-                {/* card */}
-                <div className="bg-white rounded-md overflow-hidden relative shadow-md">
-                <div>
-                    <img className="w-full" src="https://lorempixel.com/640/360/food/" alt="Recipe Title" />
-                </div>
-                <div className="p-4">
-                    <h2 className="text-2xl text-green-400">Recipe Title</h2>
-                    <div className="flex justify-between mt-4 mb-4 text-gray-500">
-                    <div className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span className="ml-1 lg:text-xl">30m</span>
-                    </div>
-                    <div className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
-                        <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
-                        </svg>
-                        <span className="ml-1 lg:text-xl">10</span>
-                    </div>
-                    <div className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                        </svg>
-                        <span className="ml-1 lg:text-xl">1-2</span>
-                    </div>
-                    </div>
-                    <p className="mb-4 text-gray-500">A recipe that's quick and easy to make and super tasty!</p>
-                    <button className="text-white bg-green-400 p-4 rounded-md w-full uppercase">View Recipe</button>
-                </div>
-                <div className="absolute top-0 right-0 mt-4 mr-4 bg-green-400 text-white rounded-full pt-1 pb-1 pl-4 pr-5 text-xs uppercase">
-                    <span>Medium</span>
-                </div>
-                </div>
-                {/* card */}
-                <div className="bg-white rounded-md overflow-hidden relative shadow-md">
-                <div>
-                    <img className="w-full" src="https://lorempixel.com/640/360/food/" alt="Recipe Title" />
-                </div>
-                <div className="p-4">
-                    <h2 className="text-2xl text-green-400">Recipe Title</h2>
-                    <div className="flex justify-between mt-4 mb-4 text-gray-500">
-                    <div className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span className="ml-1 lg:text-xl">30m</span>
-                    </div>
-                    <div className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
-                        <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
-                        </svg>
-                        <span className="ml-1 lg:text-xl">10</span>
-                    </div>
-                    <div className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                        </svg>
-                        <span className="ml-1 lg:text-xl">1-2</span>
-                    </div>
-                    </div>
-                    <p className="mb-4 text-gray-500">A recipe that's quick and easy to make and super tasty!</p>
-                    <button className="text-white bg-green-400 p-4 rounded-md w-full uppercase">View Recipe</button>
-                </div>
-                <div className="absolute top-0 right-0 mt-4 mr-4 bg-green-400 text-white rounded-full pt-1 pb-1 pl-4 pr-5 text-xs uppercase">
-                    <span>Medium</span>
-                </div>
-                </div>
-                {/* card */}
-                <div className="bg-white rounded-md overflow-hidden relative shadow-md">
-                <div>
-                    <img className="w-full" src="https://lorempixel.com/640/360/food/" alt="Recipe Title" />
-                </div>
-                <div className="p-4">
-                    <h2 className="text-2xl text-green-400">Recipe Title</h2>
-                    <div className="flex justify-between mt-4 mb-4 text-gray-500">
-                    <div className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span className="ml-1 lg:text-xl">30m</span>
-                    </div>
-                    <div className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
-                        <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
-                        </svg>
-                        <span className="ml-1 lg:text-xl">10</span>
-                    </div>
-                    <div className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                        </svg>
-                        <span className="ml-1 lg:text-xl">1-2</span>
-                    </div>
-                    </div>
-                    <p className="mb-4 text-gray-500">A recipe that's quick and easy to make and super tasty!</p>
-                    <button className="text-white bg-green-400 p-4 rounded-md w-full uppercase">View Recipe</button>
-                </div>
-                <div className="absolute top-0 right-0 mt-4 mr-4 bg-green-400 text-white rounded-full pt-1 pb-1 pl-4 pr-5 text-xs uppercase">
-                    <span>Medium</span>
-                </div>
-                </div>
-                {/* card */}
-                <div className="bg-white rounded-md overflow-hidden relative shadow-md">
-                <div>
-                    <img className="w-full" src="https://lorempixel.com/640/360/food/" alt="Recipe Title" />
-                </div>
-                <div className="p-4">
-                    <h2 className="text-2xl text-green-400">Recipe Title</h2>
-                    <div className="flex justify-between mt-4 mb-4 text-gray-500">
-                    <div className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span className="ml-1 lg:text-xl">30m</span>
-                    </div>
-                    <div className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
-                        <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
-                        </svg>
-                        <span className="ml-1 lg:text-xl">10</span>
-                    </div>
-                    <div className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                        </svg>
-                        <span className="ml-1 lg:text-xl">1-2</span>
-                    </div>
-                    </div>
-                    <p className="mb-4 text-gray-500">A recipe that's quick and easy to make and super tasty!</p>
-                    <button className="text-white bg-green-400 p-4 rounded-md w-full uppercase">View Recipe</button>
-                </div>
-                <div className="absolute top-0 right-0 mt-4 mr-4 bg-green-400 text-white rounded-full pt-1 pb-1 pl-4 pr-5 text-xs uppercase">
-                    <span>Medium</span>
-                </div>
-                </div>
+              </div>
             </div>
-            </div>
+          ))}
+
+          <button
+            style={{ width: "300px" }}
+            className="flex-no-shrink mb-4 bg-green-400 hover:bg-green-500 px-5 ml-4 py-2 text-lg shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-300 hover:border-green-500 text-white rounded-full transition ease-in duration-300"
+          >
+            <a
+              href="https://github.com/maheshvarpandey?tab=repositories"
+              traget="_blank"
+              className="text-white hover:text-white"
+            >
+              {" "}
+              View all{" "}
+            </a>
+          </button>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
-export default Project
+export default Project;

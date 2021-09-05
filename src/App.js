@@ -14,10 +14,6 @@ import {
   FilePdfFilled,
 } from "@ant-design/icons";
 import myImage from "./assets/maheshvar.png";
-import fsdImage from "./assets/fsdImage.png";
-import calImage from "./assets/calendar.png";
-import dazImage from "./assets/dazzleroad.png";
-import oifendImage from "./assets/oifend.png";
 import Slider from "react-animated-slider";
 import About from "./components/About";
 import Certification from "./components/Certification";
@@ -29,7 +25,6 @@ import "react-animated-slider/build/horizontal.css";
 import "./SliderStyle/slider-animations.css";
 import "./SliderStyle/styles.css";
 import "./App.css";
-import { Calendar, Tag } from "antd";
 
 const content = [
   {
@@ -61,213 +56,14 @@ const content = [
   },
 ];
 
-const projectList = [
-  {
-    title: "FSD ( Fidelis Sustainability Development )",
-    head: "Medical equipment supplier",
-    description:
-      "I worked as a front-end developer in this project, The technology I used in this project -",
-    button: "Read More",
-    image: fsdImage,
-    user: "Maheshvar Pandey",
-    technology: [
-      {
-        id: 1,
-        name: "HTML",
-      },
-      {
-        id: 2,
-        name: "CSS",
-      },
-      {
-        id: 3,
-        name: "JavaScript",
-      },
-      {
-        id: 4,
-        name: "Ofbiz",
-      },
-      {
-        id: 5,
-        name: "FTL",
-      },
-    ],
-  },
-  {
-    title: "Holiday Calendar",
-    head: "Government Holiday Calenday in india",
-    description:
-      "It was my first react js web application, The technology I used in this project -",
-    button: "Read More",
-    image: calImage,
-    user: "Maheshvar Pandey",
-    technology: [
-      {
-        id: 1,
-        name: "HTML",
-      },
-      {
-        id: 2,
-        name: "CSS",
-      },
-      {
-        id: 3,
-        name: "JavaScript",
-      },
-      {
-        id: 4,
-        name: "React JS",
-      },
-      {
-        id: 5,
-        name: "Axios",
-      },
-    ],
-  },
-  {
-    title: "DazzleRoad",
-    head: "Ecommerce website to sell online jewellery",
-    description:
-      "I worked as a front-end developer in this project, The technology I used in this project -",
-    button: "Read More",
-    image: dazImage,
-    user: "Maheshvar Pandey",
-    technology: [
-      {
-        id: 1,
-        name: "HTML",
-      },
-      {
-        id: 2,
-        name: "CSS",
-      },
-      {
-        id: 3,
-        name: "JavaScript",
-      },
-      {
-        id: 4,
-        name: "Ofbiz",
-      },
-      {
-        id: 5,
-        name: "FTL",
-      },
-    ],
-  },
-  {
-    title: "OIFend",
-    head: "Marketting web application",
-    description:
-      "I made this project as `Mern Stack Developer`, The technology I used in this project -",
-    button: "Read More",
-    image: oifendImage,
-    user: "Maheshvar Pandey",
-    technology: [
-      {
-        id: 1,
-        name: "HTML",
-      },
-      {
-        id: 2,
-        name: "CSS",
-      },
-      {
-        id: 3,
-        name: "JavaScript",
-      },
-      {
-        id: 4,
-        name: "React Js",
-      },
-      {
-        id: 5,
-        name: "Tailwind CSS",
-      },
-      {
-        id: 6,
-        name: "Node JS",
-      },
-      {
-        id: 7,
-        name: "Mongo DB",
-      },
-      {
-        id: 8,
-        name: "Rest API",
-      },
-      {
-        id: 9,
-        name: "Ant Design",
-      },
-    ],
-  },
-];
-
 function App() {
   const [activeTab, setActiveTab] = useState("home");
   const [bgColor, setBgColor] = useState("bg-gray-400");
   const Home = () => (
-    <Slider className="slider-wrapper overflow-y-auto screenHeight">
-      <div className="">
-        {/* dark theme */}
-        {projectList.map((data) => (
-          <div className="max-w-3xl w-full mx-auto z-10">
-            <div className="flex flex-col">
-              <div className="bg-gray-900 border border-gray-900 shadow-lg  rounded-3xl p-4 m-4">
-                <div className="flex-none sm:flex">
-                  <div className=" relative h-32 w-32   sm:mb-0 mb-3">
-                    <img
-                      src={data.image}
-                      alt="FSD ( Fidelis Sustainability Development )"
-                      className="border-2 border-gray-500 w-32 h-32 object-cover rounded-2xl"
-                    />
-                  </div>
-                  <div className="flex-auto sm:ml-5 justify-evenly">
-                    <div className="flex items-left justify-between sm:mt-2">
-                      <div className="flex items-left">
-                        <div className="flex flex-col">
-                          <div className="w-full flex-none text-lg text-gray-200 font-bold text-left leading-none">
-                            {data.title}
-                          </div>
-                          <div className="flex-auto text-gray-400 my-1">
-                            <span className="mr-3 ">
-                              {data.head}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex pt-2  text-sm text-gray-400">
-                      <div className="">
-                        <p>
-                          {data.description}
-                        </p>
-                        <div className="text-left">
-                          {data.technology.map(tech=>(
-                            <Tag color="green">{tech.name}</Tag>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                    <button className="flex-no-shrink float-right bg-green-400 hover:bg-green-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-300 hover:border-green-500 text-white rounded-full transition ease-in duration-300">
-                      See more..
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-
-        <button
-          style={{ width: "300px" }}
-          className="flex-no-shrink mb-4 bg-green-400 hover:bg-green-500 px-5 ml-4 py-2 text-lg shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-300 hover:border-green-500 text-white rounded-full transition ease-in duration-300"
-        >
-          View all
-        </button>
+    <Slider className="slider-wrapper overflow-y-auto w-full screenHeight">
+      <div className="px-8">
+        <Project />
       </div>
-
       {content.map((item, index) => (
         <div
           key={index}
@@ -311,7 +107,7 @@ function App() {
       case "Certifications": {
         return <Certification />;
       }
-      case "Projects": {
+      case "Contact": {
         return <Project />;
       }
       case "Intrest": {
@@ -412,7 +208,7 @@ function App() {
               {" "}
               <HomeFilled />{" "}
             </button>
-            <button
+            {/* <button
               className="bg-red-500 sideWidth h-8 w-6 transition-all rounded-full mb-2 outline-none focus:outline-none"
               theme-button="red"
               onClick={() => {
@@ -423,7 +219,7 @@ function App() {
             >
               {" "}
               <InfoCircleFilled />{" "}
-            </button>
+            </button> */}
             <button
               className="bg-pink-500 sideWidth h-8 w-6 transition-all rounded-full mb-2 outline-none focus:outline-none"
               theme-button="pink"
@@ -436,7 +232,7 @@ function App() {
               {" "}
               <FilePdfFilled />{" "}
             </button>
-            <button
+            {/* <button
               className="bg-purple-500 sideWidth h-8 w-6 transition-all rounded-full mb-2 outline-none focus:outline-none"
               theme-button="purple"
               onClick={() => {
@@ -447,8 +243,8 @@ function App() {
             >
               {" "}
               <EditFilled />{" "}
-            </button>
-            <button
+            </button> */}
+            {/* <button
               className="bg-green-500 sideWidth h-8 w-6 transition-all rounded-full mb-2 outline-none focus:outline-none"
               theme-button="green"
               onClick={() => {
@@ -459,19 +255,20 @@ function App() {
             >
               {" "}
               <FileTextFilled />{" "}
-            </button>
+            </button> */}
             <button
               className="bg-indigo-500 sideWidth h-8 w-6 transition-all rounded-full mb-2 outline-none focus:outline-none"
               theme-button="indigo"
               onClick={() => {
                 setBgColor("bg-indigo-500");
-                setActiveTab("Projects");
+                setActiveTab("Contact");
               }}
-              title="Projects"
+              title="Contact Me"
             >
               {" "}
               <CopyFilled />{" "}
             </button>
+            
             <button
               className="bg-blue-500 sideWidth h-8 w-6 transition-all rounded-full mb-2 outline-none focus:outline-none"
               theme-button="blue"
