@@ -25,6 +25,7 @@ import "react-animated-slider/build/horizontal.css";
 import "./SliderStyle/slider-animations.css";
 import "./SliderStyle/styles.css";
 import "./App.css";
+import ContactUs from "./components/ContactUs";
 
 const content = [
   {
@@ -64,7 +65,16 @@ function App() {
       <div className="px-8">
         <Project />
       </div>
-      {content.map((item, index) => (
+      <div className="px-8">
+        <Resume />
+      </div>
+      <div className="px-8">
+        <ContactUs />
+      </div>
+      <div className="px-8">
+        <Intrest />
+      </div>
+      {/* {content.map((item, index) => (
         <div
           key={index}
           className="slider-content"
@@ -86,7 +96,7 @@ function App() {
             </span>
           </section>
         </div>
-      ))}
+      ))} */}
     </Slider>
   );
 
@@ -108,7 +118,7 @@ function App() {
         return <Certification />;
       }
       case "Contact": {
-        return <Project />;
+        return <ContactUs bgColor={bgColor} />;
       }
       case "Intrest": {
         return <Intrest />;
@@ -268,7 +278,7 @@ function App() {
               {" "}
               <CopyFilled />{" "}
             </button>
-            
+
             <button
               className="bg-blue-500 sideWidth h-8 w-6 transition-all rounded-full mb-2 outline-none focus:outline-none"
               theme-button="blue"

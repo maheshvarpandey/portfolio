@@ -219,7 +219,7 @@ function Project() {
           >
             <a
               href="https://github.com/maheshvarpandey?tab=repositories"
-              traget="_blank"
+              target="_blank"
               className="text-white hover:text-white"
             >
               {" "}
