@@ -3,6 +3,9 @@ import fsdImage from "../../assets/fsdImage.png";
 import calImage from "../../assets/calendar.png";
 import dazImage from "../../assets/dazzleroad.png";
 import oifendImage from "../../assets/oifend.png";
+import mmoImage from "../../assets/mmo.png";
+import autopartImage from "../../assets/autopart.png";
+import logistImage from "../../assets/logist.png";
 import { Tag } from "antd";
 
 const projectList = [
@@ -72,7 +75,7 @@ const projectList = [
   },
   {
     title: "DazzleRoad",
-    head: "Ecommerce website to sell online jewellery",
+    head: "E-commerce website to sell online jewellery",
     githubUrl: "",
     description:
       "I worked as a front-end developer in this project, The technology I used in this project -",
@@ -148,8 +151,131 @@ const projectList = [
         id: 9,
         name: "Ant Design",
       },
+      {
+        id: 10,
+        name: "Redux Thunk",
+      }
+    ],
+  }, {
+    title: "Manage My org",
+    githubUrl: "https://app.managemyorg.com",
+    head: "Organization Management System",
+    description:
+      "I worked in this project as a front-end developer.",
+    button: "Read More",
+    image: mmoImage,
+    user: "Maheshvar Pandey",
+    technology: [
+      {
+        id: 1,
+        name: "HTML",
+      },
+      {
+        id: 2,
+        name: "CSS",
+      },
+      {
+        id: 3,
+        name: "JavaScript",
+      },
+      {
+        id: 4,
+        name: "React Js",
+      },
+      {
+        id: 5,
+        name: "Tailwind CSS",
+      },
+      {
+        id: 6,
+        name: "Rest API",
+      },
+      {
+        id: 7,
+        name: "Ant Design",
+      },
+      {
+        id: 8,
+        name: "React Redux",
+      }
     ],
   },
+  {
+    title: "Logist",
+    githubUrl: "https://test-logist.web.app.com",
+    head: "Logistics Web Applications",
+    description:
+      "I worked in this project as a front-end developer.",
+    button: "Read More",
+    image: logistImage,
+    user: "Maheshvar Pandey",
+    technology: [
+      {
+        id: 1,
+        name: "HTML",
+      },
+      {
+        id: 2,
+        name: "CSS",
+      },
+      {
+        id: 3,
+        name: "JavaScript",
+      },
+      {
+        id: 4,
+        name: "React Js",
+      },
+      {
+        id: 5,
+        name: "Tailwind CSS",
+      },
+      {
+        id: 6,
+        name: "Rest API",
+      },
+      {
+        id: 7,
+        name: "Ant Design",
+      },
+      {
+        id: 8,
+        name: "Redux Saga",
+      }
+    ],
+  },
+  {
+    title: "The Autopart shop",
+    githubUrl: "https://theautopartsshop.com",
+    head: "E-Commerce Web Application",
+    description:
+      "I am working on this project as a front-end developer.",
+    button: "Read More",
+    image: autopartImage,
+    user: "Maheshvar Pandey",
+    technology: [
+      {
+        id: 1,
+        name: "HTML",
+      },
+      {
+        id: 2,
+        name: "CSS",
+      },
+      {
+        id: 3,
+        name: "JavaScript",
+      },
+      {
+        id: 4,
+        name: "React Js",
+      },
+      {
+        id: 5,
+        name: "Rest API",
+      }
+    ],
+  }
 ];
 
 function Project() {

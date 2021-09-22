@@ -136,7 +136,7 @@ function Resume() {
                     className="text-lg text-center text-gray-200 capitalize"
                     style={{}}
                   >
-                    Nautanawa, Maharajgang,  UP
+                    Nautanawa, Maharajganj,  UP
                   </h2>
                   <h3 className="text-sm  text-gray-400  text-center">273305 - India</h3>
                 </div>
