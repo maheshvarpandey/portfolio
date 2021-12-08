@@ -22,7 +22,7 @@ import ContactUs from "./components/ContactUs";
 
 
 function App() {
-  const [activeTab, setActiveTab] = useState("home");
+  const [activeTab, setActiveTab] = useState("Home");
   const [bgColor, setBgColor] = useState("bg-gray-400");
   const Home = () => (
     <Slider className="slider-wrapper overflow-y-auto w-full screenHeight">
@@ -195,10 +195,10 @@ function App() {
               <InfoCircleFilled />{" "}
             </button> */}
             <button
-              className="bg-pink-500 sideWidth h-8 w-6 transition-all rounded-full mb-2 outline-none focus:outline-none"
+              className="bg-blue-500 sideWidth h-8 w-6 transition-all rounded-full mb-2 outline-none focus:outline-none"
               theme-button="pink"
               onClick={() => {
-                setBgColor("bg-pink-500");
+                setBgColor("bg-blue-500");
                 setActiveTab("Resume");
               }}
               title="Resume"

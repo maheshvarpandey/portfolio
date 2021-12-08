@@ -1,6 +1,7 @@
 import React from "react";
 import { Tabs } from "antd";
 import myImage from "../../assets/maheshvar.png";
+import Education from "../Education";
 // import { AppleOutlined, AndroidOutlined } from "@ant-design/icons";
 // import Project from "../Project";
 // import './index.less'
@@ -144,6 +145,7 @@ function Resume() {
             </div>
           </div>
         </div>
+        <Education />
     </div>
   );
 }
