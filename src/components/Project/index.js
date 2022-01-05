@@ -285,15 +285,15 @@ function Project() {
         <div className="">
           {/* dark theme */}
           {projectList.map((data) => (
-            <div className="w-full mx-auto z-10">
+            <div className="w-full mx-auto z-10 mb-2">
               <div className="flex flex-col">
-                <div className="bg-gray-900 border border-gray-900 shadow-lg  rounded-3xl p-4 m-4">
+                <div className="bg-gray-900 border border-gray-900 shadow-lg  rounded-3xl p-2 lg:p-4 lg:m-4">
                   <div className="flex-none sm:flex">
-                    <div className=" relative h-32 w-32   sm:mb-0 mb-3">
+                    <div className=" relative lg:h-32 lg:w-32 sm:mb-0 mb-3">
                       <img
                         src={data.image}
                         alt="FSD ( Fidelis Sustainability Development )"
-                        className="border-2 border-gray-500 w-32 h-32 object-cover rounded-2xl"
+                        className="border-2 border-gray-500 md:w-32 md:h-32 lg:w-32 lg:h-32 object-revert rounded-2xl"
                       />
                     </div>
                     <div className="flex-auto sm:ml-5 justify-evenly">

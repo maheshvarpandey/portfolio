@@ -71,7 +71,7 @@ function ContactUs(props) {
     <div ref={ref}>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Maheshvar | Contact us</title>
+        <title>Maheshvar Pandey | React JS | Angular 12 | Next JS Develeloper</title>
       </Helmet>
       <div className="text-xl font-extrabold shadow-md rounded-full px-4 py-2 mx-4 mt-2">Contact me</div>
       <div>
@@ -95,6 +95,7 @@ function ContactUs(props) {
                         src={call}
                         className="rounded-full p-2 bg-blue-400"
                         style={{ height: "40px" }}
+                        alt=""
                       />
                       <span className="truncate text-lg">
                         <div className="mt-1 ml-2" style={{ color: "white" }}>
