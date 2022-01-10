@@ -19,7 +19,7 @@ import "./SliderStyle/slider-animations.css";
 import "./SliderStyle/styles.css";
 import "./App.css";
 import ContactUs from "./components/ContactUs";
-import { Affix } from "antd";
+import { Affix, notification } from "antd";
 import moment from 'moment';
 
 function App() {
@@ -88,12 +88,17 @@ function App() {
 		}
 	};
 	
-	// var currentTime;
-	// setInterval(() => {
-	// 	var d = new Date();
-	// 	currentTime = moment(d).format('LT');
-	// }, 1000);
-	
+	const openNotificationWithIcon = type => {
+		notification[type]({
+		  message: 'Suggestion',
+		  description:
+			'Please view the particular view from the menu section by clicking on the top icons',
+		});
+	  };
+
+	useEffect(() => {
+		openNotificationWithIcon('info');
+	}, []);
 
 	return (
 		<div className="">
