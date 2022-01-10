@@ -72,7 +72,7 @@ function ContactUs(props) {
     <div ref={ref}>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Maheshvar Pandey | React JS | Angular 12 | Next JS Develeloper</title>
+        <title>Maheshvar Kumar Pandey | React JS | Angular 12 | Next JS Develeloper</title>
       </Helmet>
       <div className="text-xl font-extrabold shadow-md rounded-full px-4 py-2 mx-4 mt-2">Contact me</div>
       <div>
