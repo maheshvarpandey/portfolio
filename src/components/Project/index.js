@@ -314,7 +314,7 @@ function Project() {
                           <p>{data.description}</p>
                           <div className="flex flex-wrap text-left mb-2">
                             {data.technology.map((tech) => (
-                              <div className="">
+                              <div className="mt-2 lg:mt-0">
                                 <Tag color="green">{tech.name}</Tag>
                               </div>
                             ))}
@@ -326,7 +326,7 @@ function Project() {
                           <a
                             href={data.githubUrl}
                             target="_blank"
-                            style={{ color: "white" }}
+                            style={{ color: "white" }} rel="noreferrer"
                           >
                             See more..{" "}
                           </a>
@@ -340,13 +340,13 @@ function Project() {
           ))}
 
           <button
-            style={{ width: "300px" }}
+            // style={{ width: "300px" }}
             className="flex-no-shrink mb-4 bg-green-400 hover:bg-green-500 px-5 ml-4 py-2 text-lg shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-300 hover:border-green-500 text-white rounded-full transition ease-in duration-300"
           >
             <a
               href="https://github.com/maheshvarpandey?tab=repositories"
               target="_blank"
-              className="text-white hover:text-white"
+              className="text-white hover:text-white" rel="noreferrer"
             >
               {" "}
               View all{" "}

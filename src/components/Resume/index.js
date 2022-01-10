@@ -10,7 +10,7 @@ const { TabPane } = Tabs;
 
 function Resume() {
   return (
-    <div className="mt-2 lg:mt-8 mx-2 lg:mx-8 overflow-y-auto" style={{height: '70vh'}} >
+    <div className="mt-2 lg:mt-8 mx-2 lg:mx-8 overflow-y-auto portFolioHeight" >
       {/* <Tabs defaultActiveKey="2" type="card">
         <TabPane
           tab={

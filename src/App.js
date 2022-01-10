@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import {
-  HomeFilled,
-  PhoneFilled,
-  MailFilled,
-  CopyFilled,
-  CustomerServiceFilled,
-  FilePdfFilled,
+	HomeFilled,
+	PhoneFilled,
+	MailFilled,
+	CopyFilled,
+	CustomerServiceFilled,
+	FilePdfFilled,
 } from "@ant-design/icons";
 import Slider from "react-animated-slider";
 import About from "./components/About";
@@ -20,108 +20,82 @@ import "./SliderStyle/styles.css";
 import "./App.css";
 import ContactUs from "./components/ContactUs";
 import { Affix } from "antd";
-
+import moment from 'moment';
 
 function App() {
-  const [activeTab, setActiveTab] = useState("Home");
-  const [showButton, setShowButton] = useState(false);
-  const [bgColor, setBgColor] = useState("bg-gray-400");
-  const Home = () => (
-    <Slider className="slider-wrapper overflow-y-auto w-full screenHeight">
-      <div className="lg:px-8">
-        <Project />
-      </div>
-      <div className="lg:px-8">
-        <Resume />
-      </div>
-      <div className="lg:px-8">
-        <ContactUs />
-      </div>
-      <div className="lg:px-8">
-        <Intrest />
-      </div>
-      {/* {content.map((item, index) => (
-        <div
-          key={index}
-          className="slider-content"
-          style={{ background: `url('${item.image}') no-repeat center center` }}
-        >
-          <div className="inner">
-            <h1>{item.title}</h1>
-            <p>{item.description}</p>
-            <button className="buttonSlider">{item.button}</button>
-          </div>
-          <section className="text-center justify-center">
-            <img
-              className="text-center h-20 w-20"
-              src={myImage}
-              alt="Maheshvar"
-            />
-            <span className="text-center">
-              Posted by <strong>Maheshvar</strong>
-            </span>
-          </section>
-        </div>
-      ))} */}
-    </Slider>
-  );
+	const [activeTab, setActiveTab] = useState("Home");
+	const [showButton, setShowButton] = useState(false);
+	const [bgColor, setBgColor] = useState("bg-gray-400");
+	const Home = () => (
+		<Slider className="slider-wrapper overflow-y-auto w-full screenHeight">
+			<div className="lg:px-8">
+				<Project />
+			</div>
+			<div className="lg:px-8">
+				<Resume />
+			</div>
+			<div className="lg:px-8">
+				<ContactUs />
+			</div>
+			<div className="lg:px-8">
+				<Intrest />
+			</div>
+		</Slider>
+	);
 
-  const renderData = () => {
-    switch (activeTab) {
-      case "Home": {
-        return <Home />;
-      }
-      case "About": {
-        return <About />;
-      }
-      case "Resume": {
-        return <Resume />;
-      }
-      case "Education": {
-        return <Education />;
-      }
-      case "Certifications": {
-        return <Certification />;
-      }
-      case "Contact": {
-        return <ContactUs bgColor={bgColor} />;
-      }
-      case "Intrest": {
-        return <Intrest />;
-      }
-      default:
-        return <Home />;
-    }
-  };
+	const renderData = () => {
+		switch (activeTab) {
+			case "Home": {
+				return <Home />;
+			}
+			case "About": {
+				return <About />;
+			}
+			case "Resume": {
+				return <Resume />;
+			}
+			case "Education": {
+				return <Education />;
+			}
+			case "Certifications": {
+				return <Certification />;
+			}
+			case "Contact": {
+				return <ContactUs bgColor={bgColor} />;
+			}
+			case "Intrest": {
+				return <Intrest />;
+			}
+			default:
+				return <Home />;
+		}
+	};
 
-  useEffect(() => {
-    renderData();
-  }, [activeTab]);
+	useEffect(() => {
+		renderData();
+	}, [activeTab]);
 
-  //   const allElements = document.querySelectorAll('*:not([theme-button]):not([class*="gray"])');
-  // const themeButtons = document.querySelectorAll('[theme-button]');
-  // const escapeRegExp = (string) =>  string?.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  // const replaceAll = (str, term, replacement) => str.replace(new RegExp(escapeRegExp(term), 'g'), replacement);
-  // let currTheme = 'indigo';
+	const getGreeting = () => {
+		var today = new Date();
+		var curHr = today.getHours();
 
-  // const changeTheme = (theme) => {
-  //   allElements.forEach((element) => {
-  //     console.log("jj");
-  //     if (element.getAttribute('class') !== null) {
-  //       const newClasses = replaceAll(element.getAttribute('class'), currTheme, theme);
-  //       element.setAttribute('class', newClasses);
-  //     }
-  //   });
-  //   currTheme = theme;
-  // }
+		if (curHr < 12) {
+			return "Good Morning 🌞"+ moment(today).format('LT');
+		} else if (curHr < 18) {
+			return "Good Afternoon 🌞"+ moment(today).format('LT');
+		} else {
+			return "Good Evening 😊"+ moment(today).format('LT');
+		}
+	};
+	
+	// var currentTime;
+	// setInterval(() => {
+	// 	var d = new Date();
+	// 	currentTime = moment(d).format('LT');
+	// }, 1000);
+	
 
-  // themeButtons.forEach((button) => {
-  //    button.addEventListener('click', (e) => {
-  //   changeTheme(e.target.getAttribute('theme-button'));
-  //   });
-  // });
-
-  return (
+	return (
 		<div className="">
 			<div>
 				<div
@@ -131,20 +105,33 @@ function App() {
 					<div className="w-64 h-64 ml-auto relative opacity-50 -mr-32 bg-indigo-300 rounded-full" />
 					<div className="w-screen h-64 absolute opacity-50 bottom-0 right-0 -my-40 -mx-64 bg-indigo-300 rounded-full" />
 				</div>
-				<div className="container mx-auto h-screen pt-4 lg:pt-20 px-8 relative">
+				<div className="container mx-auto h-screen pt-2 lg:pt-20 px-0 lg:px-8 relative">
 					<Affix>
 						<div
-							className="float-right p-4 cursor-pointer lg:hidden"
+							className="pt-1 pb-2 px-4 cursor-pointer shadow-xl lg:hidden"
 							onClick={() => setShowButton(!showButton)}>
-							{!showButton ? (
-								<img
-									alt=""
-                  className="h-30 w-30"
-									src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/000000/external-horizontal-separated-bars-representing-hamburger-menu-layout-grid-color-tal-revivo.png"
-								/>
-							) : (
-								<img alt="" style={{height: '24px', width: '24px'}} src="https://img.icons8.com/nolan/64/delete-sign.png" />
-							)}
+							<div className="flex justify-between">
+								<div className="text-sm font-extrabold text-white">
+									{getGreeting()}
+									{/* <span className="px-1">{currentTime}</span> */}
+									<i className="pl-2 underline">Maheshvar</i>
+								</div>
+								<div>
+									{!showButton ? (
+										<img
+											alt=""
+											className="h-30 w-30"
+											src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/000000/external-horizontal-separated-bars-representing-hamburger-menu-layout-grid-color-tal-revivo.png"
+										/>
+									) : (
+										<img
+											alt=""
+											style={{ height: "24px", width: "24px" }}
+											src="https://img.icons8.com/nolan/64/delete-sign.png"
+										/>
+									)}
+								</div>
+							</div>
 						</div>
 					</Affix>
 					<div className="w-full rounded-lg lg:overflow-hidden overflow-auto lg:flex-col flex-col shadow-2xl">
@@ -215,7 +202,7 @@ function App() {
 													setActiveTab("Home");
 												}}
 												className="text-white border border-white bg-gray-500 hover:bg-gray-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-												Home
+													Home
 											</button>
 											<button
 												type="button"
@@ -245,53 +232,6 @@ function App() {
 												Intrest
 											</button>
 										</div>
-
-										{/* <button
-											className="bg-gray-500 sideWidth h-30 w-30 transition-all rounded-full mb-2 outline-none focus:outline-none"
-											theme-button="gray"
-											onClick={() => {
-												setBgColor("bg-gray-500");
-												setActiveTab("Home");
-											}}
-											title="Home">
-											{" "}
-											<HomeFilled />{" "}
-										</button> */}
-										{/* <button
-											className="bg-blue-500 sideWidth h-30 w-30 transition-all rounded-full mb-2 outline-none focus:outline-none"
-											theme-button="pink"
-											onClick={() => {
-												setBgColor("bg-blue-500");
-												setActiveTab("Resume");
-											}}
-											title="Resume">
-											{" "}
-											<FilePdfFilled />{" "}
-										</button> */}
-
-										{/* <button
-											className="bg-indigo-500 sideWidth h-30 w-30 transition-all rounded-full mb-2 outline-none focus:outline-none"
-											theme-button="indigo"
-											onClick={() => {
-												setBgColor("bg-indigo-500");
-												setActiveTab("Contact");
-											}}
-											title="Contact Me">
-											{" "}
-											<CopyFilled />{" "}
-										</button> */}
-
-										{/* <button
-											className="bg-blue-500 sideWidth h-30 w-30 transition-all rounded-full mb-2 outline-none focus:outline-none"
-											theme-button="blue"
-											onClick={() => {
-												setBgColor("bg-blue-500");
-												setActiveTab("Intrest");
-											}}
-											title="Intrest">
-											{" "}
-											<CustomerServiceFilled />{" "}
-										</button> */}
 									</div>
 								</div>
 							</>
@@ -322,7 +262,9 @@ function App() {
 
 							<div className="sm:d-block lg:flex-1 bg-gray-400">
 								<div className="font-bold py-1 border-l-2 border-r-2 border-black text-lg text-center ">
-									{activeTab}
+									{getGreeting()}
+									{/* <span>{currentTime}</span> */}
+									<i className="pl-2 underline">Maheshvar</i>
 								</div>
 							</div>
 							<div className="sm:d-block lg:flex-1 bg-blue-200 px-2 py-1">

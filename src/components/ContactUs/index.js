@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useRef } from "react";
 
 import {
@@ -107,6 +108,7 @@ function ContactUs(props) {
                   <li className="mb-1">
                     <a href="#" className="w-fill flex px-3 py-1">
                       <img
+                        alt=""
                         src={mail}
                         className="rounded-full p-3 bg-blue-400"
                         style={{ height: "40px" }}
@@ -121,6 +123,7 @@ function ContactUs(props) {
                   <li>
                     <a href="#" className="w-fill flex px-3 py-1">
                       <img
+                        alt=""
                         src={locationImage}
                         className="rounded-full p-2 bg-blue-400"
                         style={{ height: "40px" }}
@@ -137,7 +140,7 @@ function ContactUs(props) {
             </div>
             <div className="mt-8 "></div>
           </div>
-          <div className="bg-gray-100 rounded-r-lg mx-4 md:mx-0">
+          <div className="bg-gray-100 lg:rounded-r-lg mx-4 md:mx-0">
             <div className="px-8 py-4 pt-4 lg:pt-16">
               <Form
                 form={form}

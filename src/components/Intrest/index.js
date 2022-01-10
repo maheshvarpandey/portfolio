@@ -2,7 +2,7 @@ import React from 'react'
 
 function Intrest() {
     return (
-      <div className="mt-10 overflow-y-auto" style={{height: '70vh'}}>
+      <div className="mt-10 overflow-y-auto portFolioHeight" >
         <section className="container px-6 pt-4 mx-auto">
           <div className="grid gap-6 mb-8 md:grid-cols-2 lg:grid-cols-4">
             {/* Card 1 */}

@@ -42,10 +42,40 @@ code {
 .screenHeight{
   height: 80vh !important;
 }
-
 .slide.current {
   left: 0;
   height: 80vh;
   overflow-y: scroll;
   background-color: rgba(122, 121, 121, 0.288);
+}
+.portFolioHeight{
+  height: 70vh !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .screenHeight{
+    height: 92vh !important;
+  }
+  .portFolioHeight{
+    height: 92vh !important;
+  }
+  .slide.current {
+    left: 0;
+    height: 100vh !important;
+    overflow-y: scroll;
+    background-color: rgba(122, 121, 121, 0.288);
+  }
+
+  .previousButton {
+    display: hidden !important;
+    position: absolute;
+    top: 50%;
+    transform: translateX(90%) !important;
+    z-index: 10;
+    /* background: url(http://svgshare.com/i/41_.svg) no-repeat center center / 16px; */
+    width: 32px;
+    height: 32px;
+    text-indent: -9999px;
+    cursor: pointer;
+  }
 }
