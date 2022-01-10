@@ -55,6 +55,7 @@ code {
 @media only screen and (max-width: 600px) {
   .screenHeight{
     height: 92vh !important;
+    overflow-y: scroll !important;
   }
   .portFolioHeight{
     height: 92vh !important;

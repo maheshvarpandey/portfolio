@@ -8,7 +8,7 @@ import {
 	FilePdfFilled,
 } from "@ant-design/icons";
 import Slider from "react-animated-slider";
-import About from "./components/About";
+// import About from "./components/About";
 import Certification from "./components/Certification";
 import Education from "./components/Education";
 import Intrest from "./components/Intrest";
@@ -27,7 +27,7 @@ function App() {
 	const [showButton, setShowButton] = useState(false);
 	const [bgColor, setBgColor] = useState("bg-gray-400");
 	const Home = () => (
-		<Slider className="slider-wrapper overflow-y-auto w-full screenHeight">
+		<Slider autoplay={3000} className="slider-wrapper overflow-y-auto w-full screenHeight">
 			<div className="lg:px-8">
 				<Project />
 			</div>
@@ -49,7 +49,7 @@ function App() {
 				return <Home />;
 			}
 			case "About": {
-				return <About />;
+				return <Project />;
 			}
 			case "Resume": {
 				return <Resume />;
@@ -203,6 +203,15 @@ function App() {
 												}}
 												className="text-white border border-white bg-gray-500 hover:bg-gray-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
 													Home
+											</button>
+											<button
+												type="button"
+												onClick={() => {
+													setBgColor("bg-gray-500");
+													setActiveTab("About");
+												}}
+												className="py-2 px-4 mr-2 mb-2 text-sm font-medium text-black bg-gray-200 rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+												Projects
 											</button>
 											<button
 												type="button"
