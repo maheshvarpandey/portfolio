@@ -52,6 +52,18 @@ code {
   height: 70vh !important;
 }
 
+path {
+  fill: #000;
+}
+.logo {
+  fill: #333;
+}
+.instagram-logo {
+  height: 3rem;
+  width: 3rem;
+  circle: #fff;
+}
+
 @media only screen and (max-width: 600px) {
   .screenHeight{
     height: 92vh !important;
