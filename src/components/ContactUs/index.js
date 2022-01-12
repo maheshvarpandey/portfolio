@@ -15,7 +15,6 @@ import call from "../../assets/call.svg";
 import mail from "../../assets/mail.svg";
 import locationImage from "../../assets/location.svg";
 import { Helmet } from "react-helmet";
-import './index.less'
 
 // const { Option } = Select;
 // const { TextArea } = Input;
