@@ -32,13 +32,13 @@ code {
 }
 
 .sideWidth {
-  width: 1rem !important;
+  width: 2.75rem !important;
   /* transition-delay: 1s; */
   transition-timing-function: ease;
 }
-.sideWidth:hover {
+/* .sideWidth:hover {
   width: 3rem !important;
-}
+} */
 .screenHeight{
   height: 80vh !important;
 }

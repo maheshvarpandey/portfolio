@@ -19,11 +19,11 @@ import "./SliderStyle/slider-animations.css";
 import "./SliderStyle/styles.css";
 import "./App.css";
 import ContactUs from "./components/ContactUs";
-import { Affix, notification } from "antd";
+import { Affix, notification, Tooltip } from "antd";
 import moment from 'moment';
 
 function App() {
-	const [activeTab, setActiveTab] = useState("Home");
+	const [activeTab, setActiveTab] = useState("About");
 	const [showButton, setShowButton] = useState(false);
 	const [bgColor, setBgColor] = useState("bg-gray-400");
 	const Home = () => (
@@ -45,9 +45,9 @@ function App() {
 
 	const renderData = () => {
 		switch (activeTab) {
-			case "Home": {
-				return <Home />;
-			}
+			// case "Home": {
+			// 	return <Home />;
+			// }
 			case "About": {
 				return <Project />;
 			}
@@ -73,6 +73,7 @@ function App() {
 
 	useEffect(() => {
 		renderData();
+		setShowButton(false)
 	}, [activeTab]);
 
 	const getGreeting = () => {
@@ -200,7 +201,7 @@ function App() {
 								<div>
 									<div className="py-2 px-1 flex bg-none border-l-0 border-t-4 border-b-4 border-indigo-400 justify-center shadow-2xl flex-row">
 										<div>
-											<button
+											{/* <button
 												type="button"
 												onClick={() => {
 													setBgColor("bg-gray-500");
@@ -208,7 +209,7 @@ function App() {
 												}}
 												className="text-white border border-white bg-gray-500 hover:bg-gray-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
 													Home
-											</button>
+											</button> */}
 											<button
 												type="button"
 												onClick={() => {
@@ -291,54 +292,62 @@ function App() {
 						</div>
 					</div>
 				</div>
-				<div className="invisible lg:visible fixed h-screen right-0 top-0 items-center flex">
+				<div className="invisible lg:visible fixed h-screen right-0 top-0 items-center flex w-12">
 					<div className="py-2 px-1 bg-none border-l-0 border-t-4 border-b-4 border-indigo-400 inline-flex items-center rounded-tl-lg shadow-2xl rounded-bl-lg  flex-col">
-						<button
-							className="bg-gray-500 sideWidth h-8 w-6 transition-all rounded-full mb-2 outline-none focus:outline-none"
-							theme-button="gray"
-							onClick={() => {
-								setBgColor("bg-gray-500");
-								setActiveTab("Home");
-							}}
-							title="Home">
-							{" "}
-							<HomeFilled />{" "}
-						</button>
-						<button
-							className="bg-blue-500 sideWidth h-8 w-6 transition-all rounded-full mb-2 outline-none focus:outline-none"
-							theme-button="pink"
-							onClick={() => {
-								setBgColor("bg-blue-500");
-								setActiveTab("Resume");
-							}}
-							title="Resume">
-							{" "}
-							<FilePdfFilled />{" "}
-						</button>
+						<Tooltip placement="left" color={"gray"} title={"Home"}>
+							<button
+								className="bg-gray-500 sideWidth h-12 w-20 transition-all rounded-lg mb-2 outline-none focus:outline-none"
+								theme-button="gray"
+								onClick={() => {
+									setBgColor("bg-gray-500");
+									setActiveTab("Home");
+								}}
+								title="Home">
+								{" "}
+								<HomeFilled />{" "}
+							</button>
+						</Tooltip>
+						<Tooltip placement="left" color={"blue"} title={"Resume"}>
+							<button
+								className="bg-blue-500 sideWidth h-12 w-20 transition-all rounded-lg mb-2 outline-none focus:outline-none"
+								theme-button="blue"
+								onClick={() => {
+									setBgColor("bg-blue-500");
+									setActiveTab("Resume");
+								}}
+								title="Resume">
+								{" "}
+								<FilePdfFilled />{" "}
+							</button>
+						</Tooltip>
 
-						<button
-							className="bg-indigo-500 sideWidth h-8 w-6 transition-all rounded-full mb-2 outline-none focus:outline-none"
-							theme-button="indigo"
-							onClick={() => {
-								setBgColor("bg-indigo-500");
-								setActiveTab("Contact");
-							}}
-							title="Contact Me">
-							{" "}
-							<CopyFilled />{" "}
-						</button>
+						<Tooltip placement="left" color={"indigo"} title={"Contact Me"}>
+							<button
+								className="bg-indigo-500 sideWidth h-12 w-20 transition-all rounded-lg mb-2 outline-none focus:outline-none"
+								theme-button="indigo"
+								onClick={() => {
+									setBgColor("bg-indigo-500");
+									setActiveTab("Contact");
+								}}
+								title="Contact Me">
+								{" "}
+								<CopyFilled />{" "}
+							</button>
+						</Tooltip>
 
-						<button
-							className="bg-blue-500 sideWidth h-8 w-6 transition-all rounded-full mb-2 outline-none focus:outline-none"
-							theme-button="blue"
-							onClick={() => {
-								setBgColor("bg-blue-500");
-								setActiveTab("Intrest");
-							}}
-							title="Intrest">
-							{" "}
-							<CustomerServiceFilled />{" "}
-						</button>
+						<Tooltip placement="left" color={"blue"} title={"Intrest"}>
+							<button
+								className="bg-blue-500 sideWidth h-12 w-20 transition-all rounded-lg mb-2 outline-none focus:outline-none"
+								theme-button="blue"
+								onClick={() => {
+									setBgColor("bg-blue-500");
+									setActiveTab("Intrest");
+								}}
+								title="Intrest">
+								{" "}
+								<CustomerServiceFilled />{" "}
+							</button>
+						</Tooltip>
 					</div>
 				</div>
 			</div>
