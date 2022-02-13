@@ -159,7 +159,7 @@ function App() {
 											src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/64/000000/external-call-contact-us-flatart-icons-flat-flatarticons-3.png"
 										/>
 										<div className="ml-2 text-left">
-											<div className="mb-1 text-xs">+91-9559014486</div>
+											<div className="mb-1 text-xs">Chat with me</div>
 											<div className="-mt-1 font-sans text-sm font-semibold">
 												WhatsApp only
 											</div>
@@ -258,15 +258,19 @@ function App() {
 						<h1 className="px-6 pt-2">Maheshvar Kumar Pandey, React JS Developer, Angular 12, Tailwind CSS</h1>
 						<div className="hidden w-full lg:flex">
 							<div className="px-2 py-1 bg-green-200 sm:d-block lg:flex-1">
+							<a
+											target="_blank"
+											href="//api.whatsapp.com/send?phone=919814639815&text=Hi Maheshvar Pandey from web!"
+											rel="noreferrer">
 								<div className="flex justify-between">
 									<div>
 										<PhoneFilled className="-mt-2" style={{ color: "green" }} />{" "}
-										<span className="pl-2 font-bold">+91-9559014486</span>
+										<span className="pl-2 font-bold">Chat with me</span>
 									</div>
 									<div className="cursor-pointer">
 										<a
 											target="_blank"
-											href="//api.whatsapp.com/send?phone=919814639815&text=From your web aplication"
+											href="//api.whatsapp.com/send?phone=919814639815&text=Hi Maheshvar Pandey from web!"
 											rel="noreferrer">
 											<img
 												src="https://img.icons8.com/ios/50/000000/whatsapp--v5.png"
@@ -277,6 +281,7 @@ function App() {
 										</a>
 									</div>
 								</div>
+								</a>
 							</div>
 
 							<div className="bg-gray-400 sm:d-block lg:flex-1">

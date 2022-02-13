@@ -100,7 +100,7 @@ function ContactUs(props) {
 											/>
 											<span className="text-lg truncate">
 												<div className="mt-1 ml-2" style={{ color: "white" }}>
-													+91-9559014486
+													Chat with me
 												</div>
 											</span>
 										</a>
