@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import {
 	HomeFilled,
@@ -27,7 +28,7 @@ function App() {
 	const [showButton, setShowButton] = useState(false);
 	const [bgColor, setBgColor] = useState("bg-gray-400");
 	const Home = () => (
-		<Slider autoplay={3000} className="slider-wrapper overflow-y-auto w-full screenHeight">
+		<Slider autoplay={3000} className="w-full overflow-y-auto slider-wrapper screenHeight">
 			<div className="lg:px-8">
 				<Project />
 			</div>
@@ -42,6 +43,20 @@ function App() {
 			</div>
 		</Slider>
 	);
+	const openNotificationWithIcon = type => {
+		notification[type]({
+		  message: 'Suggestion',
+		  description:
+			'Please view the particular view from the menu section by clicking on the top icons',
+		});
+	  };
+
+	useEffect(()=>{
+		console.log('logging path',window);
+		if(window.innerWidth < 500) {
+			openNotificationWithIcon('info');
+		}
+	}, [window.innerWidth])
 
 	const renderData = () => {
 		switch (activeTab) {
@@ -89,32 +104,21 @@ function App() {
 		}
 	};
 	
-	const openNotificationWithIcon = type => {
-		notification[type]({
-		  message: 'Suggestion',
-		  description:
-			'Please view the particular view from the menu section by clicking on the top icons',
-		});
-	  };
-
-	useEffect(() => {
-		openNotificationWithIcon('info');
-	}, []);
 
 	return (
 		<div className="">
 			<div>
 				<div
 					className={`h-screen w-screen ${bgColor} overflow-hidden absolute flex items-center`}>
-					<div className="w-screen h-64 absolute top-0 opacity-50 left-0 -my-40 -mx-64 bg-indigo-300 rounded-full" />
-					<div className="w-64 h-64 -mx-32 bg-indigo-300 opacity-50 rounded-full" />
-					<div className="w-64 h-64 ml-auto relative opacity-50 -mr-32 bg-indigo-300 rounded-full" />
-					<div className="w-screen h-64 absolute opacity-50 bottom-0 right-0 -my-40 -mx-64 bg-indigo-300 rounded-full" />
+					<div className="absolute top-0 left-0 w-screen h-64 -mx-64 -my-40 bg-indigo-300 rounded-full opacity-50" />
+					<div className="w-64 h-64 -mx-32 bg-indigo-300 rounded-full opacity-50" />
+					<div className="relative w-64 h-64 ml-auto -mr-32 bg-indigo-300 rounded-full opacity-50" />
+					<div className="absolute bottom-0 right-0 w-screen h-64 -mx-64 -my-40 bg-indigo-300 rounded-full opacity-50" />
 				</div>
-				<div className="container mx-auto h-screen pt-2 lg:pt-20 px-0 lg:px-8 relative">
+				<div className="container relative h-screen px-0 pt-2 mx-auto lg:pt-20 lg:px-8">
 					<Affix>
 						<div
-							className="pt-1 pb-2 px-4 cursor-pointer shadow-xl lg:hidden"
+							className="px-4 pt-1 pb-2 shadow-xl cursor-pointer lg:hidden"
 							onClick={() => setShowButton(!showButton)}>
 							<div className="flex justify-between">
 								<div className="text-sm font-extrabold text-white">
@@ -140,10 +144,10 @@ function App() {
 							</div>
 						</div>
 					</Affix>
-					<div className="w-full rounded-lg lg:overflow-hidden overflow-auto lg:flex-col flex-col shadow-2xl">
+					<div className="flex-col w-full overflow-auto rounded-lg shadow-2xl lg:overflow-hidden lg:flex-col">
 						{showButton && (
 							<>
-								<div className="lg:hidden p-4 justify-between items-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+								<div className="items-center justify-between p-4 space-y-4 lg:hidden sm:flex sm:space-y-0 sm:space-x-4">
 									<a
 										target="_blank"
 										href="//api.whatsapp.com/send?phone=919814639815&text=From your web aplication"
@@ -154,7 +158,7 @@ function App() {
 											style={{ height: "45px" }}
 											src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/64/000000/external-call-contact-us-flatart-icons-flat-flatarticons-3.png"
 										/>
-										<div className="text-left ml-2">
+										<div className="ml-2 text-left">
 											<div className="mb-1 text-xs">+91-9559014486</div>
 											<div className="-mt-1 font-sans text-sm font-semibold">
 												WhatsApp only
@@ -172,7 +176,7 @@ function App() {
 											style={{ height: "45px" }}
 											src="https://img.icons8.com/fluency/48/000000/linkedin.png"
 										/>
-										<div className="text-left ml-2">
+										<div className="ml-2 text-left">
 											<div className="mb-1 text-xs">Maheshvar Pandey</div>
 											<div className="-mt-1 font-sans text-sm font-semibold">
 												Connect me
@@ -190,7 +194,7 @@ function App() {
 											style={{ height: "40px" }}
 											src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-email-cyber-security-kiranshastry-gradient-kiranshastry-1.png"
 										/>
-										<div className="text-left ml-4">
+										<div className="ml-4 text-left">
 											<div className="mb-1 text-xs">mkp10697@gmail.com</div>
 											<div className="-mt-1 font-sans text-sm font-semibold">
 												Email me
@@ -199,7 +203,7 @@ function App() {
 									</a>
 								</div>
 								<div>
-									<div className="py-2 px-1 flex bg-none border-l-0 border-t-4 border-b-4 border-indigo-400 justify-center shadow-2xl flex-row">
+									<div className="flex flex-row justify-center px-1 py-2 border-t-4 border-b-4 border-l-0 border-indigo-400 shadow-2xl bg-none">
 										<div>
 											{/* <button
 												type="button"
@@ -216,7 +220,7 @@ function App() {
 													setBgColor("bg-gray-500");
 													setActiveTab("About");
 												}}
-												className="py-2 px-4 mr-2 mb-2 text-sm font-medium text-black bg-gray-200 rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+												className="px-4 py-2 mb-2 mr-2 text-sm font-medium text-black bg-gray-200 border border-gray-200 rounded-full hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
 												Projects
 											</button>
 											<button
@@ -225,7 +229,7 @@ function App() {
 													setBgColor("bg-blue-500");
 													setActiveTab("Resume");
 												}}
-												className="py-2 px-4 mr-2 mb-2 text-sm font-medium text-white bg-blue-500 rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+												className="px-4 py-2 mb-2 mr-2 text-sm font-medium text-white bg-blue-500 border border-gray-200 rounded-full hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
 												Resume
 											</button>
 											<button
@@ -251,9 +255,9 @@ function App() {
 								</div>
 							</>
 						)}
-
-						<div className="hidden lg:flex w-full">
-							<div className="sm:d-block lg:flex-1 bg-green-200 px-2 py-1">
+						<h1 className="px-6 pt-2">Maheshvar Kumar Pandey, React JS Developer, Angular 12, Tailwind CSS</h1>
+						<div className="hidden w-full lg:flex">
+							<div className="px-2 py-1 bg-green-200 sm:d-block lg:flex-1">
 								<div className="flex justify-between">
 									<div>
 										<PhoneFilled className="-mt-2" style={{ color: "green" }} />{" "}
@@ -275,28 +279,28 @@ function App() {
 								</div>
 							</div>
 
-							<div className="sm:d-block lg:flex-1 bg-gray-400">
-								<div className="font-bold py-1 border-l-2 border-r-2 border-black text-lg text-center ">
+							<div className="bg-gray-400 sm:d-block lg:flex-1">
+								<div className="py-1 text-lg font-bold text-center border-l-2 border-r-2 border-black ">
 									{getGreeting()}
 									{/* <span>{currentTime}</span> */}
 									<i className="pl-2 underline">Maheshvar</i>
 								</div>
 							</div>
-							<div className="sm:d-block lg:flex-1 bg-blue-200 px-2 py-1">
+							<div className="px-2 py-1 bg-blue-200 sm:d-block lg:flex-1">
 								<MailFilled className="-mt-2" style={{ color: "blue" }} />{" "}
 								<span className="pl-2 font-bold">mkp10697@gmail.com</span>
 							</div>
 						</div>
-						<div className="text-center font-extrabold text-3xl justify-center items-center w-full">
+						<div className="items-center justify-center w-full text-3xl font-extrabold text-center">
 							{renderData()}
 						</div>
 					</div>
 				</div>
-				<div className="invisible lg:visible fixed h-screen right-0 top-0 items-center flex w-12">
-					<div className="py-2 px-1 bg-none border-l-0 border-t-4 border-b-4 border-indigo-400 inline-flex items-center rounded-tl-lg shadow-2xl rounded-bl-lg  flex-col">
+				<div className="fixed top-0 right-0 flex items-center invisible w-12 h-screen lg:visible">
+					<div className="inline-flex flex-col items-center px-1 py-2 border-t-4 border-b-4 border-l-0 border-indigo-400 rounded-tl-lg rounded-bl-lg shadow-2xl bg-none">
 						<Tooltip placement="left" color={"gray"} title={"Home"}>
 							<button
-								className="bg-gray-500 sideWidth h-12 w-20 transition-all rounded-lg mb-2 outline-none focus:outline-none"
+								className="w-20 h-12 mb-2 transition-all bg-gray-500 rounded-lg outline-none sideWidth focus:outline-none"
 								theme-button="gray"
 								onClick={() => {
 									setBgColor("bg-gray-500");
@@ -309,7 +313,7 @@ function App() {
 						</Tooltip>
 						<Tooltip placement="left" color={"blue"} title={"Resume"}>
 							<button
-								className="bg-blue-500 sideWidth h-12 w-20 transition-all rounded-lg mb-2 outline-none focus:outline-none"
+								className="w-20 h-12 mb-2 transition-all bg-blue-500 rounded-lg outline-none sideWidth focus:outline-none"
 								theme-button="blue"
 								onClick={() => {
 									setBgColor("bg-blue-500");
@@ -323,7 +327,7 @@ function App() {
 
 						<Tooltip placement="left" color={"indigo"} title={"Contact Me"}>
 							<button
-								className="bg-indigo-500 sideWidth h-12 w-20 transition-all rounded-lg mb-2 outline-none focus:outline-none"
+								className="w-20 h-12 mb-2 transition-all bg-indigo-500 rounded-lg outline-none sideWidth focus:outline-none"
 								theme-button="indigo"
 								onClick={() => {
 									setBgColor("bg-indigo-500");
@@ -337,7 +341,7 @@ function App() {
 
 						<Tooltip placement="left" color={"blue"} title={"Intrest"}>
 							<button
-								className="bg-blue-500 sideWidth h-12 w-20 transition-all rounded-lg mb-2 outline-none focus:outline-none"
+								className="w-20 h-12 mb-2 transition-all bg-blue-500 rounded-lg outline-none sideWidth focus:outline-none"
 								theme-button="blue"
 								onClick={() => {
 									setBgColor("bg-blue-500");
