@@ -6,8 +6,8 @@
   <!-- <link rel="icon" href="%PUBLIC_URL%/favicon.ico" /> -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Maheshvar Kumar Pandey | React JS | Angular 12 | Next JS Develeloper" />
-  <meta name="keywords" content="Maheshvar Kumar Pandey | React JS | Angular 12 | Next JS Develeloper" />
+  <meta name="description" content="Maheshvar Kumar Pandey | React JS | Angular 12 | Next JS Developer" />
+  <meta name="keywords" content="Maheshvar Kumar Pandey | React JS | Angular 12 | Next JS Developer" />
   <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
   <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
@@ -41,7 +41,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-  <title>Maheshvar Kumar Pandey | React JS | Angular 12 | Next JS Develeloper</title>
+  <title>Maheshvar Kumar Pandey | React JS | Angular 12 | Next JS Developer</title>
 </head>
 
 <body>
@@ -57,6 +57,30 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyAdAgyHvP1K2iLAPjnz2LXP0M0kTCVPNQw",
+        authDomain: "maheshvarpa.firebaseapp.com",
+        databaseURL: "https://maheshvarpa.firebaseio.com",
+        projectId: "maheshvarpa",
+        storageBucket: "maheshvarpa.appspot.com",
+        messagingSenderId: "275885512037",
+        appId: "1:275885512037:web:f21e255ff957505fb4bd8c",
+        measurementId: "G-5KFEGJMYEG"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
 </body>
 
 </html>
