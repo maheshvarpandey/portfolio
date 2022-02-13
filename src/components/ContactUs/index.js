@@ -14,7 +14,7 @@ import React, {  useRef } from "react";
 import call from "../../assets/call.svg";
 import mail from "../../assets/mail.svg";
 import locationImage from "../../assets/location.svg";
-import { Helmet } from "react-helmet";
+// import { Helmet } from "react-helmet";
 
 // const { Option } = Select;
 // const { TextArea } = Input;
@@ -64,21 +64,21 @@ function ContactUs(props) {
 
   return (
 		<div ref={ref}>
-			<Helmet>
+			{/* <Helmet>
 				<meta charSet="utf-8" />
 				<title>
 					Maheshvar Kumar Pandey | React JS | Angular 12 | Next JS Develeloper
 				</title>
-			</Helmet>
-			<div className="text-xl font-extrabold shadow-md rounded-full px-4 py-2 mx-4 mt-2">
+			</Helmet> */}
+			<div className="px-4 py-2 mx-4 mt-2 text-xl font-extrabold rounded-full shadow-md">
 				Contact me
 			</div>
 			<div>
-				<div className="container mx-auto mt-0 pl-0 md:pl-8 grid  grid-cols-1 md:grid-cols-2 md:px-4 lg:px-4 xl:px-4 py-4 rounded-lg ">
+				<div className="container grid grid-cols-1 py-4 pl-0 mx-auto mt-0 rounded-lg md:pl-8 md:grid-cols-2 md:px-4 lg:px-4 xl:px-4 ">
 					<div
 						className={`flex flex-col ${bgColor} border-2 md:rounded-l-lg justify-between mx-4 md:mx-0`}>
 						<div>
-							<div className="justify-center text-center mx-auto">
+							<div className="justify-center mx-auto text-center">
 								<img
 									alt=""
 									src={
@@ -88,17 +88,17 @@ function ContactUs(props) {
 									className=""
 								/>
 							</div>
-							<div style={{ marginLeft: "10%" }} className="text-gray-700 mt-8">
-								<ul className="w-full rounded-lg mt-2 mb-3 text-white justify-center text-center font-bold">
+							<div style={{ marginLeft: "10%" }} className="mt-8 text-gray-700">
+								<ul className="justify-center w-full mt-2 mb-3 font-bold text-center text-white rounded-lg">
 									<li className="mb-1">
-										<a href="#" className="w-fill flex pl-3 px-3 py-1">
+										<a href="#" className="flex px-3 py-1 pl-3 w-fill">
 											<img
 												src={call}
-												className="rounded-full p-2 bg-blue-400"
+												className="p-2 bg-blue-400 rounded-full"
 												style={{ height: "40px" }}
 												alt=""
 											/>
-											<span className="truncate text-lg">
+											<span className="text-lg truncate">
 												<div className="mt-1 ml-2" style={{ color: "white" }}>
 													+91-9559014486
 												</div>
@@ -106,14 +106,14 @@ function ContactUs(props) {
 										</a>
 									</li>
 									<li className="mb-1">
-										<a href="#" className="w-fill flex px-3 py-1">
+										<a href="#" className="flex px-3 py-1 w-fill">
 											<img
 												alt=""
 												src={mail}
-												className="rounded-full p-3 bg-blue-400"
+												className="p-3 bg-blue-400 rounded-full"
 												style={{ height: "40px" }}
 											/>
-											<span className="truncate text-lg">
+											<span className="text-lg truncate">
 												<div className="mt-1 ml-2" style={{ color: "white" }}>
 													mkp10697@gmail.com
 												</div>
@@ -121,11 +121,11 @@ function ContactUs(props) {
 										</a>
 									</li>
 									<li>
-										<a href="#" className="w-fill flex px-3 py-1">
+										<a href="#" className="flex px-3 py-1 w-fill">
 											<img
 												alt=""
 												src={locationImage}
-												className="rounded-full p-2 bg-blue-400"
+												className="p-2 bg-blue-400 rounded-full"
 												style={{ height: "40px" }}
 											/>
 											<span className="text-lg">
@@ -140,19 +140,19 @@ function ContactUs(props) {
 						</div>
 						<div className="mt-8 "></div>
 					</div>
-					<div className="shadow-lg lg:rounded-r-lg mx-4 md:mx-0">
+					<div className="mx-4 shadow-lg lg:rounded-r-lg md:mx-0">
 						<div className="align-middle">
-							<div className="p-6 flex items-center justify-center">
+							<div className="flex items-center justify-center p-6">
 								<div className="container max-w-screen-lg mx-auto">
 									<div className="lg:pt-36">
 										<div className="flex flex-wrap justify-center gap-2">
 											<a
 												href="https://facebook.com/maheshwar.pandey.58"
 												target="_blank"
-												className="bg-blue-500 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
+												className="inline-flex items-center p-2 space-x-2 font-semibold text-white bg-blue-500 rounded"
 												rel="noreferrer">
 												<svg
-													className="w-12 h-12 fill-current cursor-pointer"
+													className="w-12 h-12 cursor-pointer fill-current"
 													role="img"
 													xmlns="http://www.w3.org/2000/svg"
 													viewBox="0 0 24 24">
@@ -162,28 +162,28 @@ function ContactUs(props) {
 											<a
 												href="https://twitter.com/KumarMaheshvar"
 												target="_blank"
-												className="bg-blue-400 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
+												className="inline-flex items-center p-2 space-x-2 font-semibold text-white bg-blue-400 rounded"
 												rel="noreferrer">
 												<svg
-													className="w-12 h-12 fill-current cursor-pointer"
+													className="w-12 h-12 cursor-pointer fill-current"
 													role="img"
 													xmlns="http://www.w3.org/2000/svg"
 													viewBox="0 0 24 24">
 													<path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
 												</svg>
 											</a>
-											{/* <a className="bg-red-500 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
+											{/* <a className="inline-flex items-center p-2 space-x-2 font-semibold text-white bg-red-500 rounded">
 												<svg
-													className="w-12 h-12 fill-current cursor-pointer"
+													className="w-12 h-12 cursor-pointer fill-current"
 													role="img"
 													viewBox="0 0 24 24"
 													xmlns="http://www.w3.org/2000/svg">
 													<path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z" />
 												</svg>
 											</a> */}
-											{/* <a className="bg-pink-600 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
+											{/* <a className="inline-flex items-center p-2 space-x-2 font-semibold text-white bg-pink-600 rounded">
 												<svg
-													className="w-12 h-12 fill-current cursor-pointer"
+													className="w-12 h-12 cursor-pointer fill-current"
 													role="img"
 													viewBox="0 0 24 24"
 													xmlns="http://www.w3.org/2000/svg">
@@ -193,10 +193,10 @@ function ContactUs(props) {
 											<a
 												href="https://www.linkedin.com/in/maheshvar-pandey-257230149/"
 												target="_blank"
-												className="bg-blue-600 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
+												className="inline-flex items-center p-2 space-x-2 font-semibold text-white bg-blue-600 rounded"
 												rel="noreferrer">
 												<svg
-													className="w-12 h-12 fill-current cursor-pointer"
+													className="w-12 h-12 cursor-pointer fill-current"
 													role="img"
 													viewBox="0 0 256 256"
 													xmlns="http://www.w3.org/2000/svg">
@@ -208,7 +208,7 @@ function ContactUs(props) {
 											<a
 												href="https://www.instagram.com/mr_panday_jee"
 												target="_blank"
-												className="bg-blue-600 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
+												className="inline-flex items-center p-2 space-x-2 font-semibold text-white bg-blue-600 rounded"
 												rel="noreferrer">
 												<svg
 													className="instagram-logo"
@@ -240,9 +240,9 @@ function ContactUs(props) {
 													/>
 												</svg>
 											</a>
-											{/* <a className="bg-red-600 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
+											{/* <a className="inline-flex items-center p-2 space-x-2 font-semibold text-white bg-red-600 rounded">
 												<svg
-													className="w-12 h-12 fill-current cursor-pointer"
+													className="w-12 h-12 cursor-pointer fill-current"
 													xmlns="http://www.w3.org/2000/svg"
 													viewBox="0 0 16 16">
 													<path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
@@ -251,7 +251,7 @@ function ContactUs(props) {
 											<a
 												href="https://github.com/maheshvarpandey"
 												target="_blank"
-												className="bg-gray-700 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
+												className="inline-flex items-center p-2 space-x-2 font-semibold text-white bg-gray-700 rounded"
 												rel="noreferrer">
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
@@ -271,7 +271,7 @@ function ContactUs(props) {
 													</g>
 												</svg>
 											</a>
-											{/* <a className="bg-red-500 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
+											{/* <a className="inline-flex items-center p-2 space-x-2 font-semibold text-white bg-red-500 rounded">
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
 													xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -299,7 +299,7 @@ function ContactUs(props) {
                 form={form}
                 layout="vertical"
                 name="normal_login"
-                className="login-form text-left"
+                className="text-left login-form"
                 initialValues={{
                   remember: true,
                 }}
@@ -309,7 +309,7 @@ function ContactUs(props) {
                   <Col
                     lg={12}
                     sm={24}
-                    className="gutter-row pr-0 md:pr-0 lg:pr-4"
+                    className="pr-0 gutter-row md:pr-0 lg:pr-4"
                   >
                     <Form.Item
                       name="name"
@@ -346,7 +346,7 @@ function ContactUs(props) {
                   <Col
                     lg={12}
                     sm={24}
-                    className="gutter-row pr-0 md:pr-0 lg:pr-4"
+                    className="pr-0 gutter-row md:pr-0 lg:pr-4"
                   >
                     <Form.Item
                       name="phone"
@@ -381,7 +381,7 @@ function ContactUs(props) {
                 </Row>
 
                 <Row gutter={8} style={{ "flex-direction": "column" }}>
-                  <Col lg={24} sm={24} className="gutter-row mt-4">
+                  <Col lg={24} sm={24} className="mt-4 gutter-row">
                     <Form.Item
                       name="message"
                       // rules={[
@@ -399,7 +399,7 @@ function ContactUs(props) {
                   </Col>
                 </Row>
                 <Row gutter={8} style={{ "flex-direction": "column" }}>
-                  <Col lg={24} sm={24} className="gutter-row text-right">
+                  <Col lg={24} sm={24} className="text-right gutter-row">
                     <Button
                       type="primary"
                       htmlType="submit"
